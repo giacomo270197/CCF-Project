@@ -82,12 +82,6 @@ def thread_function(mappings, index, queue):
                                                               cnt)
             cnt += 1
 
-    with open(sys.argv[4], "w") as out_file:
-        out_file.write(str(old_frequencies))
-        out_file.write("\n")
-        out_file.write(str(old_correlations))
-        out_file.write("\n")
-        out_file.write(str(cross_correlations))
     # Write output to multiprocessing queue
     queue.put((index, old_frequencies, old_correlations, cross_correlations))
     return
